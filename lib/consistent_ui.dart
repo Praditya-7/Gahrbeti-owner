@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 import 'Screens/NavScreens/billing.dart';
+import 'Screens/NavScreens/home.dart';
 import 'Screens/NavScreens/profile.dart';
 import 'Screens/NavScreens/rooms.dart';
 import 'Screens/NavScreens/tenants.dart';
-import 'Screens/NavScreens/home.dart';
 
 class ConsistentUI extends StatefulWidget {
   const ConsistentUI({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class _ConsistentUIState extends State<ConsistentUI> {
     Tenants(),
     Rooms(),
     Billing(),
-    Profile(),
+    ProfileScreen(),
   ];
 
   @override

@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 
+import '../../tenant_detail.dart';
+
 class Tenants extends StatefulWidget {
   const Tenants({Key? key}) : super(key: key);
 
@@ -10,6 +12,18 @@ class Tenants extends StatefulWidget {
 
 class _TenantsState extends State<Tenants> {
   int tenantCount = 0;
+  List<String> entries = <String>[
+    '1',
+    '2',
+    '3',
+  ];
+  String tenantName = 'Ram Shrestha';
+  String listingType = 'Flat';
+  List<int> dueRemaining = [
+    15000,
+    0,
+    1600,
+  ];
   @override
   Widget build(BuildContext context) {
     TextEditingController searchValue = TextEditingController();
@@ -45,8 +59,95 @@ class _TenantsState extends State<Tenants> {
                   ),
                 )
               : Expanded(
-                  child: Container(
-                    child: Text("Tenants Available"),
+                  child: SafeArea(
+                    child: ListView.separated(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: entries.length,
+                      separatorBuilder: (BuildContext context, int index) =>
+                          Divider(
+                        height: 0.1,
+                        indent: 0,
+                        thickness: 0.1,
+                      ),
+                      itemBuilder: (BuildContext context, int index) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TenantDetail()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.all(12),
+                            height: 150,
+                            color: Colors.white,
+                            padding: EdgeInsets.all(8.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Column(
+                                  children: [
+                                    Icon(
+                                      Icons.person,
+                                      color: Color(0xff09548c),
+                                      size: 100,
+                                    ),
+                                    Text(tenantName),
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      listingType + ' No ' + entries[index],
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Dues: ',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Container(
+                                          //ERROR HERE IN DUE VALUE
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(5),
+                                            color: (entries[index] == '0')
+                                                ? Color(0xff30d472)
+                                                : Colors.orange,
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Center(
+                                              child: Text(
+                                                '1500',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Icon(Icons.more_vert),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
         ],
