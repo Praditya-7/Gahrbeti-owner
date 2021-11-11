@@ -14,9 +14,9 @@ class _TenantDetailState extends State<TenantDetail> {
   late String email = 'shrestharam@gmail.com';
   late String gender = 'Male';
   late int contact = 988634269;
-  late int em_contact = 988634269;
-  late String list_type = 'Room';
-  late int listing_no = 402;
+  late int emContact = 988634269;
+  late String listType = 'Room';
+  late int listingNo = 402;
   late int tid = 1001;
   String paymentStatus = 'pending';
   @override
@@ -205,7 +205,7 @@ class _TenantDetailState extends State<TenantDetail> {
                                 color: Colors.black),
                             children: [
                               TextSpan(
-                                  text: " " + em_contact.toString(),
+                                  text: " " + emContact.toString(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
                                       fontSize: 16.0,
@@ -224,7 +224,7 @@ class _TenantDetailState extends State<TenantDetail> {
                                 color: Colors.black),
                             children: [
                               TextSpan(
-                                  text: " " + list_type,
+                                  text: " " + listType,
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
                                       fontSize: 16.0,
@@ -243,7 +243,7 @@ class _TenantDetailState extends State<TenantDetail> {
                                 color: Colors.black),
                             children: [
                               TextSpan(
-                                  text: " " + listing_no.toString(),
+                                  text: " " + listingNo.toString(),
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
                                       fontSize: 16.0,
