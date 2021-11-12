@@ -184,7 +184,7 @@ class Billing extends StatelessWidget {
                         onPressed: () {},
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 25,
                       ),
                       Text(
                         'Ram Shrestha',
