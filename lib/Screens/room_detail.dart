@@ -24,6 +24,7 @@ class _RoomDetailState extends State<RoomDetail> {
     int waterCharge = 500;
     int intCharge = 1500;
     return Scaffold(
+      backgroundColor: Color(0xffE5E5E5),
       appBar: AppBar(
         backgroundColor: Color(0xff09548c),
         title: Text("Room Details"),
