@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-
-import '../../tenant_detail.dart';
+import 'package:gharbetiowner/Screens/owner/tenants/tenant_detail.dart';
 
 class Tenants extends StatefulWidget {
   const Tenants({Key? key}) : super(key: key);

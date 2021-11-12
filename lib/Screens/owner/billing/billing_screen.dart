@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-import '../../issued_bills.dart';
-import '../../recent_payments.dart';
+import 'package:gharbetiowner/Screens/owner/billing/recent_payments.dart';
 import 'issue_monthly_bill.dart';
+import 'issued_bills.dart';
 
 class BillingScreenOwner extends StatefulWidget {
   const BillingScreenOwner({Key? key}) : super(key: key);

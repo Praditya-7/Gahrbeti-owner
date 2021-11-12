@@ -3,8 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:gharbetiowner/Screens/owner/listings/listing_detail.dart';
 
-import '../../tenantroomdetail.dart';
 import 'add_listings_screen.dart';
 
 class ListingsScreen extends StatefulWidget {

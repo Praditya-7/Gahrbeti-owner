@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:gharbetiowner/Screens/recent_payments.dart';
-
-import '../issued_bills.dart';
+import 'package:gharbetiowner/Screens/owner/billing/issued_bills.dart';
+import 'package:gharbetiowner/Screens/owner/billing/recent_payments.dart';
 
 class Billing extends StatelessWidget {
   const Billing({Key? key}) : super(key: key);

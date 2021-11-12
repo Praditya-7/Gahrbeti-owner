@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-
-import '../../../tenant_detail.dart';
+import 'package:gharbetiowner/Screens/owner/tenants/tenant_detail.dart';
 import 'add_tenants_screen.dart';
 
 class TenantsScreen extends StatefulWidget {

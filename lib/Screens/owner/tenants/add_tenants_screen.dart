@@ -19,9 +19,11 @@ class _AddTenantsScreenState extends State<AddTenantsScreen> {
   final TextEditingController _tenantEmail = TextEditingController();
   final TextEditingController _tenantPhoneNumber = TextEditingController();
   final TextEditingController _tenantEmergencyContact = TextEditingController();
-  final TextEditingController _electricityCurrentMeterReading = TextEditingController();
-  final TextEditingController _electricityPerUnitCharge = TextEditingController();
-
+  final TextEditingController _electricityCurrentMeterReading =
+      TextEditingController();
+  final TextEditingController _electricityPerUnitCharge =
+      TextEditingController();
+  final TextEditingController _internetCharge = TextEditingController();
   final TextEditingController _waterMonthlyCharge = TextEditingController();
 
   @override
@@ -340,6 +342,47 @@ class _AddTenantsScreenState extends State<AddTenantsScreen> {
                         ),
                         child: TextField(
                           controller: _waterMonthlyCharge,
+                          cursorColor: Color(0xff09548c),
+                          decoration: InputDecoration(
+                            hintText: "Monthly Charge(in Rs)* ",
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //Internet Charge
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Internet Charges',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.only(left: 20, right: 20),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.grey[200],
+                        ),
+                        child: TextField(
+                          controller: _internetCharge,
                           cursorColor: Color(0xff09548c),
                           decoration: InputDecoration(
                             hintText: "Monthly Charge(in Rs)* ",
