@@ -42,250 +42,6 @@ class _ListingDetailState extends State<ListingDetail> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.all(10.0),
-                child: Image(
-                    image: NetworkImage(
-                        "https://media.gettyimages.com/photos/fresh-and-modern-white-style-living-room-interior-picture-id598928736?s=612x612")),
-              ),
-              SizedBox(height: 5.0),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_on,
-                          color: Color(0xff09548c),
-                        ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                          child: SizedBox(
-                            width: 200,
-                            child: Text(
-                              address,
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 3,
-                              softWrap: false,
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        Container()
-                      ],
-                    ),
-                    Text(
-                      'Rs.' + price.toString() + '/month',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
-                          color: Colors.black),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 5.0),
-              Container(
-                color: Colors.white,
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    //OwnerName
-                    Column(
-                      children: [
-                        Text("Owner",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(name),
-                      ],
-                    ),
-                    //Preferences
-                    Column(
-                      children: [
-                        Text("Preferneces",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(preference),
-                      ],
-                    ),
-                    //Floor
-                    Column(
-                      children: [
-                        Text("Floor",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(floor),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 5.0,
-              ),
-              //Basic Amenities
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text("Basic Amenities",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                        color: Colors.black)),
-              ),
-              SizedBox(
-                height: 5.0,
-              ),
-              Container(
-                width: double.infinity,
-                color: Colors.white,
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //bathRooms No
-                    RichText(
-                      text: TextSpan(
-                        text: "BathRooms : ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16.0,
-                            color: Colors.black),
-                        children: [
-                          TextSpan(
-                              text: " " + bathroomNo.toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 16.0,
-                                  color: Color(0xff494949)))
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    //Kitchen
-                    RichText(
-                      text: TextSpan(
-                        text: "Kitchen : ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16.0,
-                            color: Colors.black),
-                        children: [
-                          TextSpan(
-                              text: " " + bathroomNo.toString(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 16.0,
-                                  color: Color(0xff494949)))
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    // Internet
-                    RichText(
-                      text: TextSpan(
-                        text: "Internet : ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16.0,
-                            color: Colors.black),
-                        children: [
-                          TextSpan(
-                              text: " " + intOption,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 16.0,
-                                  color: Color(0xff494949)))
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    //parking
-                    RichText(
-                      text: TextSpan(
-                        text: "Parking : ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16.0,
-                            color: Colors.black),
-                        children: [
-                          TextSpan(
-                              text: " " + parkingOption,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 16.0,
-                                  color: Color(0xff494949)))
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                  ],
-                ),
-              ),
-              //Basic Amenities
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text("Additional Description",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0,
-                        color: Colors.black)),
-              ),
-              SizedBox(
-                height: 5.0,
-              ),
-              Container(
-                width: double.infinity,
-                color: Colors.white,
-                margin: EdgeInsets.all(10.0),
-                padding: EdgeInsets.all(10.0),
-                child: Text(addDescription),
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                child: Image(
-                    image: NetworkImage(
-                        "https://lh3.googleusercontent.com/proxy/VP6IKCJYjeabQ4p-SejSJtT53YgzUjXouhfh_h2nvIkGgbHH2zz9qHzhmJSpSmRDQG-TNplvPwkwoi88HhK7LxYSO4Ktk8lm7GzDmtDaWLTvPJt_NoZhRLTQd6ciQJVuobQN3FT_PQ")),
-              ),
-            ],
-          ),
-        ),
-      ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -322,6 +78,258 @@ class _ListingDetailState extends State<ListingDetail> {
             },
           ),
         ],
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            margin: EdgeInsets.all(10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  color: Colors.white,
+                  margin: EdgeInsets.all(10.0),
+                  child: Image(
+                      image: NetworkImage(
+                          "https://media.gettyimages.com/photos/fresh-and-modern-white-style-living-room-interior-picture-id598928736?s=612x612")),
+                ),
+                SizedBox(height: 5.0),
+                Container(
+                  color: Colors.white,
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.location_on,
+                            color: Color(0xff09548c),
+                          ),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                            child: SizedBox(
+                              width: 200,
+                              child: Text(
+                                address,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 3,
+                                softWrap: false,
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        'Rs.' + price.toString() + '/month',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5.0),
+                Container(
+                  color: Colors.white,
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //OwnerName
+                      Column(
+                        children: [
+                          Text("Owner",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(name),
+                        ],
+                      ),
+                      //Preferences
+                      Column(
+                        children: [
+                          Text("Preferneces",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(preference),
+                        ],
+                      ),
+                      //Floor
+                      Column(
+                        children: [
+                          Text("Floor",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          SizedBox(
+                            height: 5.0,
+                          ),
+                          Text(floor),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                //Basic Amenities
+                Text("Basic Amenities",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.black)),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  color: Colors.white,
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //bathRooms No
+                      RichText(
+                        text: TextSpan(
+                          text: "BathRooms : ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              color: Colors.black),
+                          children: [
+                            TextSpan(
+                                text: " " + bathroomNo.toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 16.0,
+                                    color: Color(0xff494949)))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      //Kitchen
+                      RichText(
+                        text: TextSpan(
+                          text: "Kitchen : ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              color: Colors.black),
+                          children: [
+                            TextSpan(
+                                text: " " + bathroomNo.toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 16.0,
+                                    color: Color(0xff494949)))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      // Internet
+                      RichText(
+                        text: TextSpan(
+                          text: "Internet : ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              color: Colors.black),
+                          children: [
+                            TextSpan(
+                                text: " " + intOption,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 16.0,
+                                    color: Color(0xff494949)))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                      //parking
+                      RichText(
+                        text: TextSpan(
+                          text: "Parking : ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              color: Colors.black),
+                          children: [
+                            TextSpan(
+                                text: " " + parkingOption,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 16.0,
+                                    color: Color(0xff494949)))
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5.0,
+                      ),
+                    ],
+                  ),
+                ),
+                //Basic Amenities
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text("Additional Description",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                          color: Colors.black)),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  color: Colors.white,
+                  margin: EdgeInsets.all(10.0),
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(addDescription),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text("Location",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                          color: Colors.black)),
+                ),
+                Container(
+                  margin: EdgeInsets.all(10.0),
+                  child: Image(
+                      image: NetworkImage(
+                          "https://lh3.googleusercontent.com/proxy/VP6IKCJYjeabQ4p-SejSJtT53YgzUjXouhfh_h2nvIkGgbHH2zz9qHzhmJSpSmRDQG-TNplvPwkwoi88HhK7LxYSO4Ktk8lm7GzDmtDaWLTvPJt_NoZhRLTQd6ciQJVuobQN3FT_PQ")),
+                ),
+                SizedBox(
+                  height: 100.0,
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
