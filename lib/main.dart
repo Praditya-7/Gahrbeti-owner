@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
 
-import 'consistent_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:gharbetiowner/switchUser_ui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,10 +10,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ConsistentUI(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SwitchUserUI(),
     );
   }
 }

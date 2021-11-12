@@ -1,11 +1,12 @@
 // ignore_for_file: prefer_const_constructors
-import 'package:flutter/material.dart';
 
-import 'Screens/NavScreens/billing.dart';
-import 'Screens/NavScreens/home.dart';
-import 'Screens/NavScreens/profile.dart';
-import 'Screens/NavScreens/rooms.dart';
-import 'Screens/NavScreens/tenants.dart';
+import 'package:flutter/material.dart';
+import 'package:gharbetiowner/Screens/owner/profile/profile_screen.dart';
+
+import 'billing/billing_screen.dart';
+import 'home/home_screen.dart';
+import 'listings/listings_screen.dart';
+import 'tenants/tenants_screen.dart';
 
 class ConsistentUIOwner extends StatefulWidget {
   const ConsistentUIOwner({Key? key}) : super(key: key);
@@ -15,14 +16,15 @@ class ConsistentUIOwner extends StatefulWidget {
 }
 
 class _ConsistentUIOwnerState extends State<ConsistentUIOwner> {
-  String title = "Home";
+  String title = 'Home';
   int currentIndex = 0;
+
   final screens = [
-    Home(),
-    Tenants(),
-    Rooms(),
-    Billing(),
-    ProfileScreen(),
+    HomeScreenOwner(),
+    TenantsScreen(),
+    ListingsScreen(),
+    BillingScreenOwner(),
+    ProfileScreenOwner(),
   ];
 
   @override
@@ -45,30 +47,21 @@ class _ConsistentUIOwnerState extends State<ConsistentUIOwner> {
             actions: <Widget>[
               IconButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.message,
-                  color: Colors.white,
-                ),
+                icon: Icon(Icons.message),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.notifications,
-                  color: Colors.white,
-                ),
+                icon: Icon(Icons.notifications),
               ),
             ],
           )
         : AppBar(
-            title: Text(title),
             backgroundColor: Color(0xff09548c),
+            title: Text(title),
             actions: <Widget>[
               IconButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.logout,
-                  color: Colors.white,
-                ),
+                icon: Icon(Icons.logout),
               ),
             ],
           );
@@ -76,13 +69,16 @@ class _ConsistentUIOwnerState extends State<ConsistentUIOwner> {
 
   BottomNavigationBar customNavBar() {
     return BottomNavigationBar(
-      currentIndex: currentIndex,
       type: BottomNavigationBarType.fixed,
-      showSelectedLabels: true,
+      currentIndex: currentIndex,
       showUnselectedLabels: true,
-      selectedIconTheme: IconThemeData(color: Color(0xff09548c)),
-      selectedItemColor: Color(0xff09548c),
-      selectedLabelStyle: TextStyle(color: Color(0xff09548c)),
+      showSelectedLabels: true,
+      selectedIconTheme: IconThemeData(
+        color: Color(0xff09548c),
+      ),
+      elevation: 50.0,
+      selectedLabelStyle: TextStyle(color: Colors.black),
+      unselectedLabelStyle: TextStyle(color: Colors.black),
       onTap: (index) {
         setState(() {
           currentIndex = index;
@@ -91,7 +87,7 @@ class _ConsistentUIOwnerState extends State<ConsistentUIOwner> {
           } else if (index == 1) {
             title = 'Tenants';
           } else if (index == 2) {
-            title = 'Rooms';
+            title = 'Listings';
           } else if (index == 3) {
             title = 'Billing';
           } else {
@@ -102,29 +98,33 @@ class _ConsistentUIOwnerState extends State<ConsistentUIOwner> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_filled,
+              Icons.home,
             ),
-            label: "Home"),
+            label: 'Home'),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.supervisor_account,
-            ),
-            label: "Tenants"),
+          icon: Icon(
+            Icons.people_alt,
+          ),
+          label: 'Tenants',
+        ),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.meeting_room_sharp,
-            ),
-            label: "Room"),
+          icon: Icon(
+            Icons.meeting_room_sharp,
+          ),
+          label: 'Listings',
+        ),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_balance_wallet,
-            ),
-            label: "Billing"),
+          icon: Icon(
+            Icons.account_balance_wallet,
+          ),
+          label: 'Billing',
+        ),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
-            label: "Profile"),
+          icon: Icon(
+            Icons.person_pin,
+          ),
+          label: 'Profile',
+        ),
       ],
     );
   }
